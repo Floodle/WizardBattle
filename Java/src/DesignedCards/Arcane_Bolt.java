@@ -1,3 +1,6 @@
+package DesignedCards;
+
+
 public class Arcane_Bolt extends Card {
 
     int cost = 3;
@@ -9,7 +12,7 @@ public class Arcane_Bolt extends Card {
     }
     @Override
     public void play(){
-        //deal 6 damage to opponent
+
 
     }
 

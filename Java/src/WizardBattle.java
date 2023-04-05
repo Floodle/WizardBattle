@@ -1,5 +1,3 @@
-
-
 public class WizardBattle {
 
     public static void main(String[] args) {

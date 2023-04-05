@@ -1,3 +1,5 @@
+package DesignedCards;
+
 public class Generic_Protection extends Card {
 
     int cost = 2;
