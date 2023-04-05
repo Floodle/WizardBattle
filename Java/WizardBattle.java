@@ -2,10 +2,13 @@
 
 public class WizardBattle {
 
-    Player player1;
-    Player player2;
-
     public static void main(String[] args) {
+         Player player1 = new Player();
+         Player player2 = new Player();
+        Game g = new Game(player1, player2);
+        g.startTurn();
+
+
 
     }
 
