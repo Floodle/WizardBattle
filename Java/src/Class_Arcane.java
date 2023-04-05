@@ -1,5 +1,3 @@
-package Class;
-
 public class Class_Arcane extends Card {
 
     int cost = 10;

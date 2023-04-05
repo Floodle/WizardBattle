@@ -1,6 +1,3 @@
-package DesignedCards;
-
-
 public class Arcane_Bolt extends Card {
 
     int cost = 3;
