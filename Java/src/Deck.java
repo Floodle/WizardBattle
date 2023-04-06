@@ -26,6 +26,43 @@ public class Deck{
 
  }
 
+ Deck(int decknum){
+  if(decknum==1){
+
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+
+  } else {
+
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+
+  }
+  shuffle();
+
+ }
+
  void field_to_discard(int index){
   discard.add(field.remove(index));
  }

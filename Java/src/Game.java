@@ -33,8 +33,11 @@ public class Game {
             other_Player = player2;
         }
         //removing counters and adding to clock
-        current_Player.Class.currentCounters-=1;
-        current_Player.clock(1);
+        if(current_Player.Class.currentCounters>0) {
+            current_Player.Class.currentCounters -= 1;
+            current_Player.clock(1);
+        }
+
         for (Card c:current_Player.player_deck.field) {
             c.currentCounters -= 1;
             current_Player.clock(1);

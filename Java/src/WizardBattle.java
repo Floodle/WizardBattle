@@ -3,6 +3,7 @@ public class WizardBattle {
     public static void main(String[] args) {
 
         Game g = new Game(new Player(), new Player());
+        g.player2.player_deck = new Deck(2);
         //1
         g.startTurn();
         g.startTurn();
@@ -19,6 +20,7 @@ public class WizardBattle {
         //5
         g.startTurn();
         g.startTurn();
+        g.play_card(0);
         //6
         g.startTurn();
         g.startTurn();

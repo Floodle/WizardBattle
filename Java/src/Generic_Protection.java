@@ -1,15 +1,14 @@
 public class Generic_Protection extends Passive_Modify_Damage {
 
-    int cost = 2;
-    int id = 2;
-    ThrowCatch OppCatch = ThrowCatch.DAMAGE;
-
     public Generic_Protection(){
 
     }
     @Override
     public void play(){
+        cost = 2;
+        id = 2;
         currentCounters=cost;
+        OppCatch = ThrowCatch.DAMAGE;
     }
 
     @Override
@@ -30,7 +29,7 @@ public class Generic_Protection extends Passive_Modify_Damage {
     public int passive(int input, Player owner){
         int answer = input;
         if(answer/2>=currentCounters){
-            while(currentCounters>0||answer>0){
+            while(currentCounters>0&&answer>0){
                 answer-=2;
                 currentCounters-=1;
                 owner.clock(1);

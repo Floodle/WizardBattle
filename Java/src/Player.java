@@ -5,6 +5,7 @@ public class Player {
     int pool;
     int clock;
     int manaBurn;
+
     Deck player_deck;
 
     Player(){
