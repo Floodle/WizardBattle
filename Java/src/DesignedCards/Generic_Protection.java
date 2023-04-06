@@ -1,3 +1,8 @@
+package DesignedCards;
+
+import ActualCode.Player;
+import ActualCode.ThrowCatch;
+
 public class Generic_Protection extends Passive_Modify_Damage {
 
     public Generic_Protection(){

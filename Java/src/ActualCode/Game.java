@@ -1,3 +1,7 @@
+package ActualCode;
+
+import DesignedCards.Card;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +50,7 @@ public class Game {
         //triggers effects
         for (Card c:current_Player.player_deck.field) {
             //checks for passives that care about removing counters
-            if(c.PlayerCatch==ThrowCatch.COUNTER_REMOVE){
+            if(c.PlayerCatch== ThrowCatch.COUNTER_REMOVE){
                 c.passive();
             }
             if(c.currentCounters==0||c.currentCounters==c.quickplay){

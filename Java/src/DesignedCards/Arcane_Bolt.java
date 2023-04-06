@@ -1,22 +1,24 @@
-public class Shock extends Card {
+package DesignedCards;
+import ActualCode.Player;
+import ActualCode.ThrowCatch;
+
+public class Arcane_Bolt extends Card {
 
 
 
 
 
-    public Shock(){
+    public Arcane_Bolt(){
 
     }
     @Override
     public void play(){
-        cost = 1;
+        cost = 3;
         currentCounters=cost;
-        id = 3;
+        id = 1;
     }
     @Override
     public void play(Player p1, Player p2){
-        p1.manaBurn+=1;
-        currentCounters+=1;
 
     }
 
@@ -34,16 +36,16 @@ public class Shock extends Card {
 
     }
     public void cast(Player p1, Player p2){
-        int base_damage=2;
+        int base_damage=6;
         for (Card c: p1.player_deck.field) {
-            if(c.PlayerCatch==ThrowCatch.DAMAGE){
+            if(c.PlayerCatch== ThrowCatch.DAMAGE){
                 base_damage = ((Passive_Modify_Damage) c).passive(base_damage, p1);
             }
 
         }
 
         for (Card c: p2.player_deck.field) {
-            if(c.OppCatch==ThrowCatch.DAMAGE){
+            if(c.OppCatch== ThrowCatch.DAMAGE){
                 base_damage = ((Passive_Modify_Damage) c).passive(base_damage, p2);
             }
 

@@ -1,20 +1,27 @@
-public class Class_Arcane extends Card {
+package DesignedCards;
 
-    int cost = 10;
-    int id = 3;
+import ActualCode.Player;
+import ActualCode.ThrowCatch;
+
+public class Shock extends Card {
 
 
 
-    public Class_Arcane(){
+
+
+    public Shock(){
 
     }
-
     @Override
     public void play(){
-
+        cost = 1;
+        currentCounters=cost;
+        id = 3;
     }
     @Override
     public void play(Player p1, Player p2){
+        p1.manaBurn+=1;
+        currentCounters+=1;
 
     }
 
@@ -34,14 +41,14 @@ public class Class_Arcane extends Card {
     public void cast(Player p1, Player p2){
         int base_damage=2;
         for (Card c: p1.player_deck.field) {
-            if(c.PlayerCatch==ThrowCatch.DAMAGE){
+            if(c.PlayerCatch== ThrowCatch.DAMAGE){
                 base_damage = ((Passive_Modify_Damage) c).passive(base_damage, p1);
             }
 
         }
 
         for (Card c: p2.player_deck.field) {
-            if(c.OppCatch==ThrowCatch.DAMAGE){
+            if(c.OppCatch== ThrowCatch.DAMAGE){
                 base_damage = ((Passive_Modify_Damage) c).passive(base_damage, p2);
             }
 

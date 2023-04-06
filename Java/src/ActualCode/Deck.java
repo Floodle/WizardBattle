@@ -1,3 +1,9 @@
+package ActualCode;
+
+import DesignedCards.Arcane_Bolt;
+import DesignedCards.Card;
+import DesignedCards.Generic_Protection;
+
 import java.util.*;
 
 public class Deck{
@@ -5,7 +11,7 @@ public class Deck{
  List<Card> hand = new ArrayList<>();
  List<Card> deck = new ArrayList<>();
  List<Card> discard = new ArrayList<>();
- List<Card> field = new ArrayList<>();
+ public List<Card> field = new ArrayList<>();
 // generic deck
  Deck(){
   deck.add(new Arcane_Bolt());
