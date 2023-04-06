@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 
     public Player player1;
@@ -21,37 +24,85 @@ public class Game {
         turn++;
         //determine turn
         Player current_Player;
+        Player other_Player;
         if(turn%2 == 0){
             current_Player=player2;
+            other_Player = player1;
         } else{
             current_Player=player1;
+            other_Player = player2;
         }
         //removing counters and adding to clock
-        current_Player.Class.currentCounters-=1;
+        if(current_Player.Class.currentCounters>0) {
+            current_Player.Class.currentCounters -= 1;
+            current_Player.clock(1);
+        }
+
         for (Card c:current_Player.player_deck.field) {
             c.currentCounters -= 1;
             current_Player.clock(1);
         }
-
+        List<Integer> indexes = new ArrayList<>();
         //triggers effects
         for (Card c:current_Player.player_deck.field) {
             //checks for passives that care about removing counters
-            if(c.throwPassiveType==3){
+            if(c.PlayerCatch==ThrowCatch.COUNTER_REMOVE){
                 c.passive();
             }
             if(c.currentCounters==0||c.currentCounters==c.quickplay){
                 //effect is going off
-                c.cast(player1, player2);
+                indexes.add(current_Player.player_deck.field.indexOf(c));
             }
         }
+        for(int i = indexes.size()-1; i>=0; i--){
+            current_Player.player_deck.field.get(indexes.get(i)).cast(current_Player, other_Player);
+            current_Player.player_deck.field_to_discard(indexes.get(i));
+        }
+
+
 
         //adds clocked mana to pool
         current_Player.pool +=current_Player.clock;
+        current_Player.clock=0;
 
         //draw step
         current_Player.player_deck.draw();
 
         //manaBurn step
+
+
+        if(turn%2 == 0){
+            player2=current_Player;
+            player1 = other_Player;
+        } else{
+            player1=current_Player;
+            player2 = other_Player;
+        }
+    }
+
+    void play_card(int index){
+        Player current_Player;
+        Player other_Player;
+        if(turn%2 == 0){
+            current_Player=player2;
+            other_Player = player1;
+        } else{
+            current_Player=player1;
+            other_Player = player2;
+        }
+        current_Player.player_deck.hand.get(index).play();
+        current_Player.pool -=current_Player.player_deck.hand.get(index).getCost();
+        current_Player.player_deck.play_from_hand(index);
+
+
+
+        if(turn%2 == 0){
+            player2=current_Player;
+            player1 = other_Player;
+        } else{
+            player1=current_Player;
+            player2 = other_Player;
+        }
 
     }
 

@@ -1,5 +1,3 @@
-import DesignedCards.Arcane_Bolt;
-
 import java.util.*;
 
 public class Deck{
@@ -17,6 +15,50 @@ public class Deck{
   deck.add(new Arcane_Bolt());
   deck.add(new Arcane_Bolt());
   deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  deck.add(new Arcane_Bolt());
+  shuffle();
+
+ }
+
+ Deck(int decknum){
+  if(decknum==1){
+
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+   deck.add(new Arcane_Bolt());
+
+  } else {
+
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+
+  }
   shuffle();
 
  }
@@ -52,12 +94,11 @@ public class Deck{
  //shuffles deck
  void shuffle(){
   Random r = new Random(System.nanoTime());
-  for(int i = deck.size(); i >0; i--){
+  for(int i = deck.size()-1; i >=0; i--){
     Card temp = deck.get(i);
     int randSpot = r.nextInt(i+1);
     deck.set(i, deck.get(randSpot));
     deck.set(randSpot, temp);
-
   }
 
  }
