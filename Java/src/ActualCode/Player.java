@@ -1,12 +1,17 @@
+package ActualCode;
+
+import DesignedCards.Card;
+import DesignedCards.Class_Arcane;
+
 public class Player {
 
-    Card Class;
-    int health;
-    int pool;
-    int clock;
-    int manaBurn;
+    public Card Class;
+    public int health;
+    public int pool;
+    public int clock;
+    public int manaBurn;
 
-    Deck player_deck;
+    public Deck player_deck;
 
     Player(){
         health = 20;
@@ -18,11 +23,11 @@ public class Player {
         Class.currentCounters=10;
     }
 
-    void recieve_damage(int num_damage){
+    public void recieve_damage(int num_damage){
         health-=num_damage;
     }
 
-    void clock(int num){
+    public void clock(int num){
         manaBurn-=num;
         if(manaBurn<0){
             clock-=manaBurn;

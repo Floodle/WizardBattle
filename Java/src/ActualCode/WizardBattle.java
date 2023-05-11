@@ -1,3 +1,9 @@
+package ActualCode;
+
+import ActualCode.Deck;
+import ActualCode.Game;
+import ActualCode.Player;
+
 public class WizardBattle {
 
     public static void main(String[] args) {

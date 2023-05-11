@@ -1,16 +1,21 @@
-public abstract class  Card {
+package DesignedCards;
 
-    int cost;
+import ActualCode.Player;
+import ActualCode.ThrowCatch;
+
+public abstract class Card {
+
+    public int cost;
 
 //implement effect type for passives. Each effect has a type and passives check for effects of a matching type.
-    ThrowCatch OppCatch = ThrowCatch.NO_FLAG;
-    ThrowCatch PlayerCatch = ThrowCatch.NO_FLAG;
+    public ThrowCatch OppCatch = ThrowCatch.NO_FLAG;
+    public ThrowCatch PlayerCatch = ThrowCatch.NO_FLAG;
     //1: typical damage spell
     //2: defensive spell
     //3: triggers on removal of counter
-    int quickplay;
-    int currentCounters;
-    int id = 0;
+    public int quickplay;
+    public int currentCounters;
+    public int id;
     public abstract void play();
 
     public abstract void play(Player p1, Player p2);
@@ -26,4 +31,5 @@ public abstract class  Card {
     public int getCost(){
         return cost;
     }
+
 }
