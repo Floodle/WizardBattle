@@ -56,7 +56,8 @@ public class Deck{
    deck.add(new Generic_Protection());
    deck.add(new Generic_Protection());
    deck.add(new Generic_Protection());
-   deck.add(new Generic_Protection());deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
+   deck.add(new Generic_Protection());
    deck.add(new Generic_Protection());
    deck.add(new Generic_Protection());
    deck.add(new Generic_Protection());
@@ -69,11 +70,11 @@ public class Deck{
 
  }
 
- void field_to_discard(int index){
+ public void field_to_discard(int index){
   discard.add(field.remove(index));
  }
 
- void play_from_hand(int index){
+ public void play_from_hand(int index){
   Card temp = hand.remove(index);
 
   temp.currentCounters=temp.cost;
@@ -81,7 +82,7 @@ public class Deck{
   field.add(temp);
  }
 
- void draw(){
+ public void draw(){
   if(deck.size()>0) {
    hand.add(deck.remove(0));
   }else {
@@ -90,7 +91,7 @@ public class Deck{
   }
  }
 
- void draw(int num_of_cards){
+ public void draw(int num_of_cards){
   for(int i = 0; i<num_of_cards; i++){
    draw();
   }
@@ -98,7 +99,8 @@ public class Deck{
  }
 
  //shuffles deck
- void shuffle(){
+ public void shuffle(){
+  //implement seed here if needed
   Random r = new Random(System.nanoTime());
   for(int i = deck.size()-1; i >=0; i--){
     Card temp = deck.get(i);
@@ -110,7 +112,7 @@ public class Deck{
  }
 
  //shuffles GY into deck
- void reshuffle(){
+ public void reshuffle(){
   while(discard.size()>0){
    deck.add(discard.remove(0));
   }
@@ -119,7 +121,7 @@ public class Deck{
  }
 
  //discard a card from hand to gy
- void discard(int index){
+ public void discard(int index){
   discard.add(hand.remove(index));
  }
 

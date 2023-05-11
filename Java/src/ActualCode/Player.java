@@ -5,6 +5,7 @@ import DesignedCards.Class_Arcane;
 
 public class Player {
 
+    public Owner Player_num;
     public Card Class;
     public int health;
     public int pool;

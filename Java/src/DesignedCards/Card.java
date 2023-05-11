@@ -1,5 +1,6 @@
 package DesignedCards;
 
+import ActualCode.Owner;
 import ActualCode.Player;
 import ActualCode.ThrowCatch;
 
@@ -10,6 +11,9 @@ public abstract class Card {
 //implement effect type for passives. Each effect has a type and passives check for effects of a matching type.
     public ThrowCatch OppCatch = ThrowCatch.NO_FLAG;
     public ThrowCatch PlayerCatch = ThrowCatch.NO_FLAG;
+
+    public Owner owner = Owner.NULL;
+
     //1: typical damage spell
     //2: defensive spell
     //3: triggers on removal of counter

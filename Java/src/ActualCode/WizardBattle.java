@@ -10,6 +10,8 @@ public class WizardBattle {
 
         Game g = new Game(new Player(), new Player());
         g.player2.player_deck = new Deck(2);
+        //Need to implement that when a deck is assigned to a player every card in that deck gets the owner Enum
+
         //1
         g.startTurn();
         g.startTurn();

@@ -1,20 +1,22 @@
 package DesignedCards;
-
 import ActualCode.Player;
 import ActualCode.ThrowCatch;
 
-public class Class_Arcane extends Card {
+public class Fire_Blast extends Card {
 
-    int cost = 10;
-    int id = 4;
 
-    public Class_Arcane(){
+
+
+
+    public Fire_Blast(){
 
     }
-
     @Override
     public void play(){
-
+        cost = 6;
+        currentCounters=cost;
+        id = 5;
+        quickplay = 3;
     }
     @Override
     public void play(Player p1, Player p2){
@@ -34,9 +36,8 @@ public class Class_Arcane extends Card {
     public void cast(){
 
     }
-    @Override
     public void cast(Player p1, Player p2){
-        int base_damage=2;
+        int base_damage=8;
         for (Card c: p1.player_deck.field) {
             if(c.PlayerCatch== ThrowCatch.DAMAGE){
                 base_damage = ((Passive_Modify_Damage) c).passive(base_damage, p1);
