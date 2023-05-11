@@ -36,6 +36,10 @@ public class Player {
         }
     }
 
+    public void searchCatch(){
+        //needs to search field for cards with a certain flag and return a list of those cards.
+    }
+
 
 
 }

@@ -9,7 +9,8 @@ public abstract class Card {
     public int cost;
 
 //implement effect type for passives. Each effect has a type and passives check for effects of a matching type.
-    public ThrowCatch OppCatch = ThrowCatch.NO_FLAG;
+    public  ThrowCatch OppCatch = ThrowCatch.NO_FLAG;
+    //eventurally turn this into an array list to let cards have multiple catches
     public ThrowCatch PlayerCatch = ThrowCatch.NO_FLAG;
 
     public Owner owner = Owner.NULL;
